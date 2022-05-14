@@ -1,5 +1,5 @@
 project: kiro-editor
-target: input-text
+target: input_text
 
 cmds:
-  - cmd: /input-text
+  - cmd: /input_text
