@@ -1,9 +1,11 @@
-FROM aegooby/rust-fuzz:latest AS builder
+FROM rust:latest AS builder
+
+RUN cargo install cargo-fuzz
 
 ADD . /kiro-editor
 WORKDIR /kiro-editor
 
-RUN cd fuzz && ${HOME}/.cargo/bin/cargo fuzz build
+RUN cd fuzz && cargo fuzz build
 
 FROM ubuntu:20.04
 
